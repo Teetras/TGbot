@@ -1,12 +1,12 @@
-// https://api.telegram.org/bot5519792956:AAFdOoKhnQmpRUP_snJHKWfPu6YlMnp1wCk/getUpdates
-// https://api.telegram.org/bot5519792956:AAFdOoKhnQmpRUP_snJHKWfPu6YlMnp1wCk/sendMessage?chat_id=952794633&text=hi,you_loser
-// id=-856175878
+
 const { match } = require('assert');
 const TGApi =require('node-telegram-bot-api'); 
 const { type } = require('os');
 const {gameOptions, againOptions}=require('./options')
-const token ='5519792956:AAFdOoKhnQmpRUP_snJHKWfPu6YlMnp1wCk'
-const bot= new TGApi(token,{polling:true})
+require('dotenv').config();
+
+
+const bot= new TGApi(process.env.token,{polling:true})
 // bot.message.first_name='Игровой бот'
 const startGame = async (chat_id)=>{
     const randomNumber =Math.floor(Math.random()*10)
